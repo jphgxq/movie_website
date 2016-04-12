@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keystone.analytics.movie.dao.MovieStatisDAO">
+            
+         <select id="getTickets" resultType="getTickets">
+         	SELECT t.name, t.real_time_tickets, t.ticket_percent, t.sum_tickets, t.display_percent, t.days FROM movie_tickets t;
+         </select>
+         
+         <select id="getMovieSum" resultType="movieSum">
+         	SELECT t.name, t.display_percent FROM movie_tickets t;
+         </select>
+         
+         <select id="getmovies" resultType="String">
+         	SELECT t.name FROM movie_tickets t;
+         </select>
+         
+         <select id="getmovienum" resultType="MovieNum">
+         	SELECT t.name, t.display_percent FROM movie_tickets t;
+         </select>
+         
+         <select id="getMovieNews" resultType="movieNews">
+         	SELECT t.id, t.date, t.title, t.content FROM movie_news t;
+         </select>
+         
+         <select id="getTicketHistory" resultType="ticketHistory">
+         	SELECT t.name, t.type, t.year, t.sum_tickets, t.price_ave, t.people_ave, t.area, t.date FROM tickets_history t ORDER BY t.year DESC, t.sum_tickets DESC;
+         </select>
+         
+         <select id="getTicketMonth" resultType="ticketMonth">
+         	SELECT t.rank, t.name, t.days, t.tickets_month, t.price_ave, t.people_ave, t.per_month, t.release_time, t.wom_index FROM tickets_month t;
+         </select>
+         
+         <select id="getTicketWeek" resultType="ticketWeek">
+         	SELECT t.rank, t.name, t.tickets_week, t.tickets_sum, t.days, t.price_ave, t.people_ave, t.wom_index FROM tickets_week t;
+         </select>
+         
+         <select id="getMonthTrend" resultType="monthTrend">
+         	SELECT t.date, t.tickets FROM ticket_info_week t;
+         </select>
+         
+         <select id="getWeekTrend" resultType="weekTrend">
+         	SELECT t.date, t.tickets FROM ticket_info_day t ORDER BY t.date ASC;
+         </select>
+         
+         <select id="getDisplayMovieInfo" resultType="MovieDisplayInfo">
+         	SELECT t.name, t.movie_num FROM session_info t;
+         </select>
+         
+         <select id="getCityDisplay" resultType="cityDisplay">
+         	SELECT t.name, t.movie_num, t.per_num, t.renzhi_index, t.tickets_index, t.rap_index FROM session_info t ORDER BY t.movie_num DESC;
+         </select>
+         
+         <select id="getKeyDataMovie" resultType="keyMovie">
+         	SELECT t.name, t.movie_href, t.poster_url, t.data_id, t.director, t.adaptor, t.actor, t.type, t.website, t.display_date, t.showing_time, t.drama, t.awards, t.related_movie, t.score FROM movie_info t;
+         </select>
+         
+         <select id="getKeyDataActor" resultType="keyActor">
+         	SELECT t.name, t.photo_url, t.info, t.intro, t.awards, t.latest_works, t.best_works, t.cooperator, t.fans FROM person_info t;
+         </select>
+         
+         <select id="getYear15InfoPie" resultType="year15PieInfo">
+         	SELECT t.type, t.display_date, t.tickets FROM movie_info t WHERE t.type IS NOT NULL AND t.display_date IS NOT NULL;
+         </select>
+         
+         <select id="getAudienceMovie" resultType="audienceMovie">
+         	SELECT t.name, t.per_male, t.per_female, t.older_36, t.age26_35, t.age16_25, t.younger_15, t.baiyang, t.jinniu, t.shuangzi, t.juxie, t.shizi, t.chunv, t.tiancheng, t.tianxie, t.sheshou, t.mojie, t.shuiping, t.shuangyu, t.shanghai, t.jiangsu, t.zhejiang, t.anhui, t.beijing, t.tianjin, t.guangdong, t.hebei, t.henan, t.shandong, t.hubei, t.hunan, t.jiangxi, t.fujian, t.sichuan, t.chongqing, t.guangxi, t.shanxi, t.liaoning, t.jilin, t.heilongjiang, t.guizhou, t.shanxi2, t.yunnan, t.neimenggu, t.gansu, t.qinghai, t.ningxia, t.xinjiang, t.hainan, t.xizang, t.xianggang, t.aomen, t.taiwan FROM audience t;
+         </select>
+         
+         <select id="getValuationMovie" resultType="valuateMovie">
+         	SELECT t.name, t.team, t.type, t.session, t.promotion, t.finalscore, t.wom, t.good_comment, t.normal_comment, t.bad_comment FROM valuation t;	
+         </select>
+          
+</mapper>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+        <!-- 命名空间 -->
+    <typeAliases>
+         <typeAlias alias="User" type="com.keystone.analytics.movie.model.User"/>
+         <typeAlias alias="getTickets" type="com.keystone.analytics.movie.model.getTickets"/>
+         <typeAlias alias="movieSum" type="com.keystone.analytics.movie.model.movieSum"/>
+         <typeAlias alias="MovieNum" type="com.keystone.analytics.movie.model.MovieNum"/>
+         <typeAlias alias="movieNews" type="com.keystone.analytics.movie.model.movieNews"/>
+         <typeAlias alias="ticketHistory" type="com.keystone.analytics.movie.model.ticketHistory"/>
+         <typeAlias alias="ticketMonth" type="com.keystone.analytics.movie.model.ticketMonth"/>
+         <typeAlias alias="ticketWeek" type="com.keystone.analytics.movie.model.ticketWeek"/>
+         <typeAlias alias="monthTrend" type="com.keystone.analytics.movie.model.monthTrend"/>
+         <typeAlias alias="weekTrend" type="com.keystone.analytics.movie.model.weekTrend"/>
+         <typeAlias alias="movieDisplay" type="com.keystone.analytics.movie.model.movieDisplay"/>
+         <typeAlias alias="MovieDisplayInfo" type="com.keystone.analytics.movie.model.MovieDisplayInfo"/>
+         <typeAlias alias="cityDisplay" type="com.keystone.analytics.movie.model.cityDisplay"/>
+         <typeAlias alias="keyMovie" type="com.keystone.analytics.movie.model.keyMovie"/>
+         <typeAlias alias="keyActor" type="com.keystone.analytics.movie.model.keyActor"/>
+         <typeAlias alias="year15PieInfo" type="com.keystone.analytics.movie.model.year15PieInfo"/>
+         <typeAlias alias="audienceMovie" type="com.keystone.analytics.movie.model.audienceMovie"/>
+         <typeAlias alias="valuateMovie" type="com.keystone.analytics.movie.model.valuateMovie"/>
+    </typeAliases>
+ 
+    <!-- 映射map -->
+    <mappers>
+    </mappers>
+</configuration>
